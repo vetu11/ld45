@@ -4,7 +4,7 @@ enum Directions {UP, DOWN, LEFT, RIGHT}
 
 export(float) var velocity = 100
 export(Vector2) var minVelocity = Vector2(30, 30)
-export(int) var minDeltaVelocity = 2
+export(float) var minDeltaVelocity = 0.5
 
 var Vectors = [Vector2(0, -1), Vector2(0, 1), Vector2(-1, 0), Vector2(1, 0)]
 var last_velocity: Vector2
