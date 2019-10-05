@@ -11,9 +11,7 @@ script = ExtResource( 1 )
 velocity = 300.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 492, 288 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 27, 2 )
 shape = SubResource( 1 )
