@@ -6,7 +6,7 @@ func _on_Button1_pressed():
 
 # Mute music
 func _on_Button2_pressed():
-	pass
+	AudioPlayer.mute_unmute()
 
 ### Botón para mutear todos los sonidos? ###
 

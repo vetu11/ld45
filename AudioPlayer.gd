@@ -21,11 +21,15 @@ func _ready():
 
 
 func mute_unmute():
-	if stream_player.playing:
+	"""if stream_player.playing:
 		stream_player.stop()
 		stream_player.seek(0)
 	else:
-		stream_player.play()
+		stream_player.play()"""
+	if !stream_player.stream_paused:
+		stream_player.stream_paused = true
+	else:
+		stream_player.stream_paused = false
 #	save_settings()
 
 
