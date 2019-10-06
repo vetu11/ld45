@@ -37,7 +37,6 @@ func space_controls(delta):
 		new_velocity.x = 0
 	if (abs(new_velocity.y) < minVelocity.y) && (abs(last_velocity.y - new_velocity.y) < minDeltaVelocity):
 		new_velocity.y = 0
-	print("X=" + str(new_velocity.x) + "\tY=" + str(new_velocity.y))
 	last_velocity = move_and_slide(new_velocity)
 
 
