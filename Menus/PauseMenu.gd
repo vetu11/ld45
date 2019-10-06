@@ -12,7 +12,7 @@ func _on_Button2_pressed():
 
 # Finish game
 func _on_Button3_pressed():
-	pass
+	SceneSwitcher.switch("res://Menus/MenuSelector.tscn")
 
 # Exit program
 func _on_Button4_pressed():

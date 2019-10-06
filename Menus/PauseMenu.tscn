@@ -34,14 +34,14 @@ margin_left = 690.798
 margin_top = 385.0
 margin_right = 1223.8
 margin_bottom = 449.0
-text = "Finish game"
+text = "Main menu"
 
 [node name="Button4" type="Button" parent="Control"]
 margin_left = 744.354
 margin_top = 465.708
 margin_right = 1149.35
 margin_bottom = 535.708
-text = "Exit program"
+text = "Exit game"
 [connection signal="pressed" from="Control/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Control/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Control/Button3" to="." method="_on_Button3_pressed"]
