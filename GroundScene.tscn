@@ -6,7 +6,6 @@
 [node name="GroundScene" type="Node2D"]
 
 [node name="WorldLevel" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Platform2" parent="WorldLevel" instance=ExtResource( 1 )]
 position = Vector2( -30.9513, 184.893 )
