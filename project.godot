@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Ludum Dare 45"
 config/icon="res://Assets/icon.png"
 
+[autoload]
+
+SceneSwitcher="*res://SceneSwitcher.gd"
+
 [display]
 
 window/size/width=1920
