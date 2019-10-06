@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/ld45.ogg" type="AudioStream" id=1]
 
-[node name="Node2D" type="AudioStreamPlayer"]
+[node name="MusicPlayer" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 volume_db = -6.0
 autoplay = true
