@@ -48,9 +48,13 @@ func ground_controls(delta):
 	if Input.is_action_pressed("ground_right"):
 		new_velocity += Vectors[Directions.RIGHT] * ground_velocity
 		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.animation = "walk"		
 	elif Input.is_action_pressed("ground_left"):
 		new_velocity += Vectors[Directions.LEFT] * ground_velocity
 		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.animation = "walk"
+	else:
+		$AnimatedSprite.animation = "idle"
 	
 	if Input.is_action_pressed("ground_jump") and is_on_floor():
 		new_velocity.y = -ground_jump
