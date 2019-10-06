@@ -54,7 +54,6 @@ func ground_controls(delta):
 		$AnimatedSprite.flip_h = true
 	
 	if Input.is_action_pressed("up") and is_on_floor():
-		print("jump")
 		new_velocity.y = -ground_jump
 	
 	last_velocity = move_and_slide(new_velocity, Vectors[Directions.UP])
