@@ -6,6 +6,9 @@ export(float) var velocity = 100
 export(Vector2) var minVelocity = Vector2(30, 30)
 export(float) var minDeltaVelocity = 0.5
 export(bool) var activate_ground_controls = false
+export(float) var ground_velocity = 300
+export(float) var ground_jump = 600
+export(float) var ground_gravity = 900
 
 var Vectors = [Vector2(0, -1), Vector2(0, 1), Vector2(-1, 0), Vector2(1, 0)]
 var last_velocity: Vector2
@@ -39,7 +42,22 @@ func space_controls(delta):
 
 
 func ground_controls(delta):
-	pass
+	
+	var new_velocity := Vector2()
+	new_velocity.y = last_velocity.y + ground_gravity * delta
+	
+	if Input.is_action_pressed("right"):
+		new_velocity += Vectors[Directions.RIGHT] * ground_velocity
+		$AnimatedSprite.flip_h = false
+	elif Input.is_action_pressed("left"):
+		new_velocity += Vectors[Directions.LEFT] * ground_velocity
+		$AnimatedSprite.flip_h = true
+	
+	if Input.is_action_pressed("up") and is_on_floor():
+		print("jump")
+		new_velocity.y = -ground_jump
+	
+	last_velocity = move_and_slide(new_velocity, Vectors[Directions.UP])
 
 
 func _process(delta):
