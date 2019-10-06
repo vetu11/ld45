@@ -13,6 +13,7 @@ func _process(delta):
 	
 	var new_velocity := last_velocity
 	var input_vector := Vector2()
+	var animatedSprite = $AnimatedSprite
 	
 	if Input.is_action_pressed("up"):
 		input_vector += Vectors[Directions.UP]
@@ -21,9 +22,11 @@ func _process(delta):
 		input_vector += Vectors[Directions.DOWN]
 	
 	if Input.is_action_pressed("left"):
+		animatedSprite.flip_h = true
 		input_vector += Vectors[Directions.LEFT]
 	
 	if Input.is_action_pressed("right"):
+		animatedSprite.flip_h = false
 		input_vector += Vectors[Directions.RIGHT]
 
 	new_velocity += input_vector.normalized() * velocity * delta
