@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Transitioner/transition.shader" type="Shader" id=1]
+[ext_resource path="res://Assets/Masks/shards.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "_SETUP"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "black"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/cutoff = 1.0
+shader_param/smooth_size = 0.409
+shader_param/color = null
+shader_param/mask = ExtResource( 2 )
+
+[node name="Transitioner" type="AnimationPlayer"]
+root_node = NodePath("CanvasLayer/TransitionColor")
+anims/_SETUP = SubResource( 2 )
+anims/black = SubResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="TransitionColor" type="ColorRect" parent="CanvasLayer"]
+material = SubResource( 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )

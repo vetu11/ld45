@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump 6.png-db41ae975ce299bbe15990a8cc7f9d26.stex"
+path="res://.import/How to play.png-12b81e270228fa3e00500fe62897c051.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Jump 6.png"
-dest_files=[ "res://.import/Jump 6.png-db41ae975ce299bbe15990a8cc7f9d26.stex" ]
+source_file="res://Assets/How to play.png"
+dest_files=[ "res://.import/How to play.png-12b81e270228fa3e00500fe62897c051.stex" ]
 
 [params]
 

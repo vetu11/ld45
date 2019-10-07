@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Idle 2.png-5016203708c4b17ad9d8d815ceb00395.stex"
+path="res://.import/shards.png-2faf1eeccc0acb126704666db4591fa2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player/Idle 2.png"
-dest_files=[ "res://.import/Idle 2.png-5016203708c4b17ad9d8d815ceb00395.stex" ]
+source_file="res://Assets/Masks/shards.png"
+dest_files=[ "res://.import/shards.png-2faf1eeccc0acb126704666db4591fa2.stex" ]
 
 [params]
 
