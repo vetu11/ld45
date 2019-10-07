@@ -9,6 +9,7 @@ export(bool) var activate_ground_controls = false
 export(float) var ground_velocity = 300
 export(float) var ground_jump = 600
 export(float) var ground_gravity = 900
+export(float) var bendFallVelocity = 1000
 export(float) var airResistance = 0.55
 export(float) var linearMomentumConservation = 0.008
 export(PackedScene) var PauseMenu = preload("res://Menus/PauseMenu.tscn")
@@ -44,6 +45,7 @@ func space_controls(delta):
 	# Applying new velocity
 	last_velocity = move_and_slide(new_velocity)
 
+var validDoubleJump = true
 func ground_controls(delta):
 	var new_velocity := Vector2()
 	new_velocity.y = last_velocity.y + ground_gravity * delta
@@ -62,9 +64,29 @@ func ground_controls(delta):
 	else:
 		$AnimatedSprite.animation = "idle"
 	
-	if Input.is_action_pressed("ground_jump") and is_on_floor():
-		new_velocity.y = -ground_jump
+	if Input.is_action_just_pressed("ground_jump"):
+		print("validDoubleJump:" + str(validDoubleJump) + "\n")		
+		if is_on_floor():
+			new_velocity.y = -ground_jump
+			$AnimatedSprite.animation = "idle"
+			validDoubleJump = true
+		elif validDoubleJump:
+			new_velocity.y = -ground_jump
+			$AnimatedSprite.animation = "idle"
+			validDoubleJump = false
+			
+	
+	if Input.is_action_pressed("ground_bend") and !is_on_floor():
+		$AnimatedSprite.animation = "idle" # en vez de "idle" debería decir "bend"
+		$Stand.visible = false
+		$Bend.visible = true
+		new_velocity.x = 0
+		new_velocity.y = bendFallVelocity
+	
+	if Input.is_action_just_released("ground_bend"):
 		$AnimatedSprite.animation = "idle"
+		$Bend.visible = false
+		$Stand.visible = true
 	
 	last_velocity = move_and_slide(new_velocity, Vectors[Directions.UP])
 
