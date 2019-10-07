@@ -4,10 +4,16 @@ Sigleton for switching scenes.
 """
 
 var current_scene = null
+var transitioner = null
+
+onready var Transitioner = preload("res://Transitioner/Transitioner.tscn")
 
 func _ready() -> void:
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
+	transitioner = Transitioner.instance()
+	add_child(transitioner)
 
 
 """
@@ -22,14 +28,16 @@ we can be sure that no code from the current scene is running
 """
 func switch(path):
     
-
     call_deferred("_deferred_switch", path)
 
 
 func _deferred_switch(path):
-    current_scene.free()
+	transitioner.play("black")
+	yield(transitioner, "animation_finished")
+	current_scene.free()
 	
-    var s = ResourceLoader.load(path)
-    current_scene = s.instance()
-    get_tree().get_root().add_child(current_scene)
-    get_tree().set_current_scene(current_scene)
+	var s = ResourceLoader.load(path)
+	current_scene = s.instance()
+	get_tree().get_root().add_child(current_scene)
+	get_tree().set_current_scene(current_scene)
+	transitioner.play_backwards("black")
