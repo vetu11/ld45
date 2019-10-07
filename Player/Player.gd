@@ -76,11 +76,11 @@ func ground_controls(delta):
 			validDoubleJump = false
 			
 	
-	if Input.is_action_pressed("ground_bend") and !is_on_floor():
+	if Input.is_action_pressed("ground_bend"):
 		$AnimatedSprite.animation = "idle" # en vez de "idle" debería decir "bend"
 		$Stand.visible = false
 		$Bend.visible = true
-		new_velocity.x = 0
+		if !is_on_floor(): new_velocity.x = 0
 		new_velocity.y = bendFallVelocity
 	
 	if Input.is_action_just_released("ground_bend"):
