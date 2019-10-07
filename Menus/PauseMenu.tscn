@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Menus/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://default_theme.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/How to play.png" type="Texture" id=3]
+[ext_resource path="res://Assets/sonido botones.ogg" type="AudioStream" id=3]
 
 [node name="PauseMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -19,12 +19,14 @@ __meta__ = {
 [node name="CenterContainer" type="CenterContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -876.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
-margin_left = 372.0
+margin_left = 810.0
 margin_top = 395.0
-margin_right = 672.0
+margin_right = 1110.0
 margin_bottom = 685.0
 custom_constants/separation = 30
 
@@ -51,10 +53,9 @@ margin_right = 300.0
 margin_bottom = 290.0
 text = "Exit game"
 
-[node name="how2" type="Sprite" parent="Control"]
-position = Vector2( 1568.4, 529.919 )
-scale = Vector2( 0.686676, 0.686677 )
-texture = ExtResource( 3 )
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SoundEffects"
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/main" to="." method="_on_main_pressed"]
