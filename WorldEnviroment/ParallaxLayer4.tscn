@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Backgrounds/BG arbol 2.png" type="Texture" id=1]
+
+[node name="ParallaxLayer4" type="ParallaxLayer"]
+editor/display_folded = true
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="BG arbol 1" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BG arbol 2" type="Sprite" parent="."]
+position = Vector2( 1920, 0 )
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
