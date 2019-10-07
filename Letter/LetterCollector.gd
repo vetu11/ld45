@@ -1,5 +1,7 @@
 extends Node2D
 
+signal all_letters_collected
+
 export(int) var letters_in_this_level = 1
 
 var letters_collected: Array
@@ -18,3 +20,6 @@ func _on_Body_Entering_Letter(body, letter):
 			display_initialized = true
 		body.get_node("LetterDisplay/Control/MarginContainer/HBoxContainer").get_child(letter.letter_position).text = letter.name[0]
 		letter.queue_free()
+	
+	if len(letters_collected) >= letters_in_this_level:
+		emit_signal("all_letters_collected")
