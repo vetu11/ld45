@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Espacio.png" type="Texture" id=1]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+editor/display_folded = true
+motion_mirroring = Vector2( 3840, 2160 )
+
+[node name="Space" type="Sprite" parent="ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Space4" type="Sprite" parent="ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, 1080 )
+flip_v = true
+
+[node name="Space2" type="Sprite" parent="ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 1920, 0 )
+flip_h = true
+
+[node name="Space3" type="Sprite" parent="ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 1920, 1080 )
+flip_h = true
+flip_v = true
