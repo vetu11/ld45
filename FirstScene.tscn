@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Espacio.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Letter/LetterCollector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Letter/Letter.tscn" type="PackedScene" id=4]
 
 [node name="FirstScene" type="Node2D"]
 
@@ -34,3 +36,37 @@ flip_h = true
 flip_v = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+
+[node name="LetterCollector" parent="." instance=ExtResource( 3 )]
+letters_in_this_level = 8
+
+[node name="M" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 637.57, 51.1917 )
+
+[node name="O" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 1391.36, 8.85248 )
+letter_position = 1
+
+[node name="U" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 2015.97, 75.7441 )
+letter_position = 2
+
+[node name="N" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 2406.35, 80.8957 )
+letter_position = 3
+
+[node name="T" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 3027.07, 25.7535 )
+letter_position = 4
+
+[node name="A" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 3523.77, -40.5635 )
+letter_position = 5
+
+[node name="I" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 4346.21, 67.6136 )
+letter_position = 6
+
+[node name="N2" parent="LetterCollector" instance=ExtResource( 4 )]
+position = Vector2( 4966.26, 71.9571 )
+letter_position = 7

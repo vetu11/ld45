@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/PlayerSpriteFrames.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://default_theme.tres" type="Theme" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.3062, 133.28 )
+extents = Vector2( 35.3062, 147.099 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 35.306, 96.7458 )
+extents = Vector2( 35.306, 23.778 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 1 )
 
@@ -20,14 +23,36 @@ frame = 1
 playing = true
 
 [node name="Stand" type="CollisionShape2D" parent="."]
-position = Vector2( 1.90735e-06, -32.2047 )
+position = Vector2( 1.90735e-006, -46.4904 )
 shape = SubResource( 1 )
 
 [node name="Bend" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 4.00095 )
+position = Vector2( 0, 76.858 )
 shape = SubResource( 2 )
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
+
+[node name="LetterDisplay" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="LetterDisplay"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="LetterDisplay/Control"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+margin_right = 40.0
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LetterDisplay/Control/MarginContainer"]
+margin_left = 200.0
+margin_right = 200.0
+margin_bottom = 50.0
+custom_constants/separation = 50
