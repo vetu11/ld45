@@ -11,7 +11,8 @@ export(float) var ground_jump = 600
 export(float) var ground_gravity = 900
 export(float) var airResistance = 0.55
 export(float) var linearMomentumConservation = 0.008
-export var PauseMenu = preload("res://Menus/PauseMenu.tscn")
+export(PackedScene) var PauseMenu = preload("res://Menus/PauseMenu.tscn")
+export(bool) var IWasPaused = false
 
 var Vectors = [Vector2(0, -1), Vector2(0, 1), Vector2(-1, 0), Vector2(1, 0)]
 var last_velocity: Vector2
@@ -67,11 +68,13 @@ func ground_controls(delta):
 	
 	last_velocity = move_and_slide(new_velocity, Vectors[Directions.UP])
 
-
 func _process(delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && !IWasPaused:
+		IWasPaused = true
 		get_tree().paused = true
 		SceneSwitcher.current_scene.add_child(PauseMenu.instance())
+	elif Input.is_action_pressed("pause") && IWasPaused:
+		IWasPaused = false
 
 	if activate_ground_controls:
 		ground_controls(delta)
