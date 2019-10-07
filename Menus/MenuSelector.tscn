@@ -36,20 +36,20 @@ margin_bottom = 880.0
 [node name="MainMenu" parent="MarginContainer/Container" instance=ExtResource( 4 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 446.0
+margin_right = 240.0
 margin_bottom = 680.0
 
 [node name="Credits" type="VBoxContainer" parent="MarginContainer/Container"]
 editor/display_folded = true
-margin_left = 450.0
+margin_left = 244.0
 margin_right = 1520.0
 margin_bottom = 680.0
 size_flags_horizontal = 3
 custom_constants/separation = 30
 
 [node name="Art" type="Label" parent="MarginContainer/Container/Credits"]
-margin_left = 821.0
-margin_right = 1070.0
+margin_left = 1027.0
+margin_right = 1276.0
 margin_bottom = 103.0
 size_flags_horizontal = 8
 text = "Art by:
@@ -57,9 +57,9 @@ marta.larart"
 align = 2
 
 [node name="Programming" type="Label" parent="MarginContainer/Container/Credits"]
-margin_left = 718.0
+margin_left = 924.0
 margin_top = 133.0
-margin_right = 1070.0
+margin_right = 1276.0
 margin_bottom = 236.0
 size_flags_horizontal = 8
 text = "Programmed by:
@@ -67,9 +67,9 @@ arget, vetu11"
 align = 2
 
 [node name="Music" type="Label" parent="MarginContainer/Container/Credits"]
-margin_left = 875.0
+margin_left = 1081.0
 margin_top = 266.0
-margin_right = 1070.0
+margin_right = 1276.0
 margin_bottom = 369.0
 size_flags_horizontal = 8
 text = "Music by:
@@ -77,9 +77,9 @@ vetu11"
 align = 2
 
 [node name="Thanks" type="Label" parent="MarginContainer/Container/Credits"]
-margin_left = 787.0
+margin_left = 993.0
 margin_top = 399.0
-margin_right = 1070.0
+margin_right = 1276.0
 margin_bottom = 555.0
 size_flags_horizontal = 8
 text = "Thanks to:

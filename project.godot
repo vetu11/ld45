@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Zero Memorie"
+config/name="Ludum Dare 45"
 run/main_scene="res://Menus/MenuSelector.tscn"
 config/icon="res://Assets/icon.png"
 
