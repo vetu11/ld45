@@ -45,7 +45,8 @@ func space_controls(delta):
 	# Applying new velocity
 	last_velocity = move_and_slide(new_velocity)
 
-var validDoubleJump = true
+var validDoubleJump = false
+var IWasJumping = false
 func ground_controls(delta):
 	var new_velocity := Vector2()
 	new_velocity.y = last_velocity.y + ground_gravity * delta
@@ -66,17 +67,16 @@ func ground_controls(delta):
 	
 	if Input.is_action_just_pressed("ground_jump"):
 		if is_on_floor():
+			$AnimatedSprite.animation = "jump"
 			new_velocity.y = -ground_jump
-			$AnimatedSprite.animation = "idle"
 			validDoubleJump = true
 		elif validDoubleJump:
+			$AnimatedSprite.animation = "jump"
 			new_velocity.y = -ground_jump
-			$AnimatedSprite.animation = "idle"
 			validDoubleJump = false
-			
 	
 	if Input.is_action_pressed("ground_bend"):
-		$AnimatedSprite.animation = "idle" # en vez de "idle" debería decir "bend"
+		$AnimatedSprite.animation = "bend"
 		$Stand.disabled = true
 		$Bend.disabled = false
 		if !is_on_floor(): new_velocity.x = 0

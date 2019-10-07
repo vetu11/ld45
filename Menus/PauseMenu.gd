@@ -1,7 +1,11 @@
 extends CanvasLayer
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 # Resume game
 func _on_resume_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().paused = false
 	self.queue_free()
 
