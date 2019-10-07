@@ -27,10 +27,10 @@ func space_controls(delta):
 	if Input.is_action_pressed("down"):
 		input_vector += Vectors[Directions.DOWN]
 	if Input.is_action_pressed("left"):
-		$AnimatedSprite.flip_h = true
+		$Sprite.flip_h = true
 		input_vector += Vectors[Directions.LEFT]
 	if Input.is_action_pressed("right"):
-		$AnimatedSprite.flip_h = false
+		$Sprite.flip_h = false
 		input_vector += Vectors[Directions.RIGHT]
 
 	# Calculating new velocity
