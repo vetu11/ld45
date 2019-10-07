@@ -76,8 +76,9 @@ align = 2
 margin_left = 787.0
 margin_top = 399.0
 margin_right = 1070.0
-margin_bottom = 502.0
+margin_bottom = 555.0
 size_flags_horizontal = 8
 text = "Thanks to:
-Lions Gamers"
+Lions Gamers
+MontseHack"
 align = 2
