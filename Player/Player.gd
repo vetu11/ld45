@@ -65,7 +65,6 @@ func ground_controls(delta):
 		$AnimatedSprite.animation = "idle"
 	
 	if Input.is_action_just_pressed("ground_jump"):
-		print("validDoubleJump:" + str(validDoubleJump) + "\n")		
 		if is_on_floor():
 			new_velocity.y = -ground_jump
 			$AnimatedSprite.animation = "idle"
