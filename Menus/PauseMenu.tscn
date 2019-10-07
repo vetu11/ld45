@@ -15,34 +15,34 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Button1" type="Button" parent="Control"]
+[node name="resume" type="Button" parent="Control"]
 margin_left = 656.0
 margin_top = 233.0
 margin_right = 1249.0
 margin_bottom = 292.0
 text = "Resume game"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="mute" type="Button" parent="Control"]
 margin_left = 654.0
 margin_top = 309.0
 margin_right = 1249.0
 margin_bottom = 369.0
 text = "Mute music"
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="main" type="Button" parent="Control"]
 margin_left = 690.798
 margin_top = 385.0
 margin_right = 1223.8
 margin_bottom = 449.0
 text = "Main menu"
 
-[node name="Button4" type="Button" parent="Control"]
+[node name="exit" type="Button" parent="Control"]
 margin_left = 744.354
 margin_top = 465.708
 margin_right = 1149.35
 margin_bottom = 535.708
 text = "Exit game"
-[connection signal="pressed" from="Control/Button1" to="." method="_on_Button1_pressed"]
-[connection signal="pressed" from="Control/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="Control/Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="Control/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Control/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Control/mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="Control/main" to="." method="_on_main_pressed"]
+[connection signal="pressed" from="Control/exit" to="." method="_on_exit_pressed"]
