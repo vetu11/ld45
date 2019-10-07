@@ -19,7 +19,7 @@ animation = "idle"
 playing = true
 
 [node name="Stand" type="CollisionShape2D" parent="."]
-position = Vector2( 1.90735e-06, -46.4904 )
+position = Vector2( 1.90735e-006, -46.4904 )
 shape = SubResource( 1 )
 
 [node name="Bend" type="CollisionShape2D" parent="."]
