@@ -73,17 +73,17 @@ func ground_controls(delta):
 			new_velocity.y = -ground_jump
 			validDoubleJump = false
 	
-	if Input.is_action_pressed("ground_bend"):
-		$Sprite/AnimationPlayer.current_animation = "bend"
-		$Stand.disabled = true
-		$Bend.disabled = false
-		if !is_on_floor(): new_velocity.x = 0
-		new_velocity.y = bendFallVelocity
+#	if Input.is_action_pressed("ground_bend"):
+#		$Sprite/AnimationPlayer.current_animation = "bend"
+#		$Stand.disabled = true
+#		$Bend.disabled = false
+#		if !is_on_floor(): new_velocity.x = 0
+#		new_velocity.y = bendFallVelocity
 	
-	if Input.is_action_just_released("ground_bend"):
-		$Sprite/AnimationPlayer.play_backwards("bend")
-		$Bend.disabled = true
-		$Stand.disabled = false
+#	if Input.is_action_just_released("ground_bend"):
+#		$Sprite/AnimationPlayer.play_backwards("bend")
+#		$Bend.disabled = true
+#		$Stand.disabled = false
 	
 	last_velocity = move_and_slide(new_velocity, Vectors[Directions.UP])
 
