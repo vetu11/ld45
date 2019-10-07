@@ -1,20 +1,17 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://WorldEnviroment/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/TileSet/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 
 [node name="GroundScene" type="Node2D"]
 
 [node name="WorldLevel" type="Node2D" parent="."]
 
-[node name="Platform2" parent="WorldLevel" instance=ExtResource( 1 )]
-position = Vector2( -30.9513, 184.893 )
-scale = Vector2( 24.64, 1 )
-
-[node name="Platform3" parent="WorldLevel" instance=ExtResource( 1 )]
-position = Vector2( 946.014, 29.8762 )
-scale = Vector2( 4.92, 1 )
+[node name="TileMap" type="TileMap" parent="WorldLevel"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 128, 128 )
+format = 1
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 132.135, -111.581 )
+position = Vector2( 521.626, 171.685 )
 activate_ground_controls = true
