@@ -4,7 +4,7 @@ signal all_letters_collected
 
 export(int) var letters_in_this_level = 1
 
-var letters_collected: Array
+var collected_letters := 0
 var display_initialized = false
 
 func _ready():
@@ -20,6 +20,9 @@ func _on_Body_Entering_Letter(body, letter):
 			display_initialized = true
 		body.get_node("LetterDisplay/Control/MarginContainer/HBoxContainer").get_child(letter.letter_position).text = letter.name[0]
 		letter.queue_free()
+		collected_letters += 1
 	
-	if len(letters_collected) >= letters_in_this_level:
+	
+	if collected_letters == letters_in_this_level:
+		print("collected")
 		emit_signal("all_letters_collected")

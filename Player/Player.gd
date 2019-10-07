@@ -100,3 +100,6 @@ func _process(delta):
 		ground_controls(delta)
 	else:
 		space_controls(delta)
+
+func _ready():
+	$Sprite/AnimationPlayer.play("idle")

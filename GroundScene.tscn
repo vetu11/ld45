@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/TileSet/TileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://Assets/Backgrounds/BG montaña 1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Backgrounds/BG montaña 2.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Backgrounds/BG montaña 3.png" type="Texture" id=4]
+[ext_resource path="res://WorldEnviroment/ParallaxLayer0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://WorldEnviroment/ParallaxLayer1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WorldEnviroment/ParallaxLayer2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=5]
 
 [node name="GroundScene" type="Node2D"]
@@ -18,40 +18,11 @@ tile_data = PoolIntArray( 65530, 536870912, 0, 65531, 536870912, 1, 65532, 53687
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="WorldLevel"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="WorldLevel/ParallaxBackground"]
-motion_mirroring = Vector2( 1920, 1080 )
+[node name="ParallaxLayer0" parent="WorldLevel/ParallaxBackground" instance=ExtResource( 2 )]
 
-[node name="BG montaña 1" type="Sprite" parent="WorldLevel/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 2 )
-centered = false
+[node name="ParallaxLayer1" parent="WorldLevel/ParallaxBackground" instance=ExtResource( 3 )]
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="WorldLevel/ParallaxBackground"]
-motion_scale = Vector2( 0.6, 0.8 )
-motion_mirroring = Vector2( 3840, 0 )
-
-[node name="BG montaña 2" type="Sprite" parent="WorldLevel/ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource( 3 )
-centered = false
-
-[node name="BG montaña 3" type="Sprite" parent="WorldLevel/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 1920, 0 )
-texture = ExtResource( 3 )
-centered = false
-flip_h = true
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="WorldLevel/ParallaxBackground"]
-motion_scale = Vector2( 0.8, 0.8 )
-motion_mirroring = Vector2( 3840, 0 )
-
-[node name="BG montaña 3" type="Sprite" parent="WorldLevel/ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource( 4 )
-centered = false
-
-[node name="BG montaña 4" type="Sprite" parent="WorldLevel/ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 1920, 0 )
-texture = ExtResource( 4 )
-centered = false
-flip_h = true
+[node name="ParallaxLayer2" parent="WorldLevel/ParallaxBackground" instance=ExtResource( 4 )]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 321.78, 951.569 )

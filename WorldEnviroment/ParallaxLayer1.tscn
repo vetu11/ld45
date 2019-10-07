@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Backgrounds/BG montaña 2.png" type="Texture" id=1]
+
+[node name="ParallaxLayer1" type="ParallaxLayer"]
+motion_scale = Vector2( 0.6, 0.8 )
+motion_mirroring = Vector2( 3840, 0 )
+
+[node name="BG montaña 2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BG montaña 3" type="Sprite" parent="."]
+position = Vector2( 1920, 0 )
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
