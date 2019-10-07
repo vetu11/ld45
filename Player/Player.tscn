@@ -109,7 +109,7 @@ anims/jump = SubResource( 4 )
 anims/walk = SubResource( 5 )
 
 [node name="Stand" type="CollisionShape2D" parent="."]
-position = Vector2( 1.90735e-006, 1.23 )
+position = Vector2( 1.90735e-06, 1.23 )
 shape = SubResource( 6 )
 
 [node name="Bend" type="CollisionShape2D" parent="."]
