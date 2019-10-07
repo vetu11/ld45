@@ -46,7 +46,6 @@ func space_controls(delta):
 	last_velocity = move_and_slide(new_velocity)
 
 var validDoubleJump = false
-var IWasJumping = false
 func ground_controls(delta):
 	var new_velocity := Vector2()
 	new_velocity.y = last_velocity.y + ground_gravity * delta

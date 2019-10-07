@@ -1,16 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/Controls.gd" type="Script" id=1]
 [ext_resource path="res://default_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Espacio.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Fonts/Montserrat-Bold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 61
-outline_size = 2
-extra_spacing_char = 6
-font_data = ExtResource( 4 )
+[ext_resource path="res://Assets/How to play.png" type="Texture" id=4]
 
 [node name="Controls" type="CanvasLayer"]
 pause_mode = 2
@@ -32,91 +25,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Title" type="Label" parent="Control"]
-margin_left = 222.134
-margin_top = 165.348
-margin_right = 729.134
-margin_bottom = 272.348
-custom_fonts/font = SubResource( 1 )
-text = "CONTROLS"
-
-[node name="W" type="Label" parent="Control"]
-margin_left = 337.145
-margin_top = 262.847
-margin_right = 681.145
-margin_bottom = 312.847
-text = "Go up       | Jump"
-
-[node name="TextureRect" type="TextureRect" parent="Control/W"]
-margin_left = -71.0
-margin_right = -7.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="SpaceBar" type="Label" parent="Control"]
-margin_left = 337.145
-margin_top = 327.942
-margin_right = 675.145
-margin_bottom = 377.942
-text = "Jump"
-
-[node name="TextureRect" type="TextureRect" parent="Control/SpaceBar"]
-margin_left = -71.0
-margin_right = -7.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="S" type="Label" parent="Control"]
-margin_left = 337.145
-margin_top = 399.0
-margin_right = 680.145
-margin_bottom = 449.0
-text = "Go down | Bend"
-
-[node name="TextureRect" type="TextureRect" parent="Control/S"]
-margin_left = -71.0
-margin_right = -7.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="D" type="Label" parent="Control"]
-margin_left = 337.145
-margin_top = 474.461
-margin_right = 696.145
-margin_bottom = 524.461
-text = "Go to the right"
-
-[node name="TextureRect" type="TextureRect" parent="Control/D"]
-margin_left = -71.0
-margin_right = -7.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="A" type="Label" parent="Control"]
-margin_left = 337.145
-margin_top = 547.907
-margin_right = 661.145
-margin_bottom = 597.907
-text = "Go to the left"
-
-[node name="TextureRect" type="TextureRect" parent="Control/A"]
-margin_left = -71.0
-margin_right = -7.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
-
-[node name="Pause" type="Label" parent="Control"]
-margin_left = 337.145
-margin_top = 617.0
-margin_right = 626.145
-margin_bottom = 667.0
-text = "Toggle pause"
-
-[node name="TextureRect" type="TextureRect" parent="Control/Pause"]
-margin_left = -71.0
-margin_right = -7.0
-margin_bottom = 64.0
-texture = ExtResource( 5 )
+[node name="TextureRect" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Back" type="Button" parent="Control"]
 margin_left = 1403.0
