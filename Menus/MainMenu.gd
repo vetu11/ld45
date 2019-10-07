@@ -10,7 +10,7 @@ func _on_DebugButton_pressed():
 func _on_PlayButton_pressed():
 	emit_signal("play_sound")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	SceneSwitcher.switch("res://Levels/Level1.tscn")
+	SceneSwitcher.switch("res://Levels/Level0.tscn")
 
 func _on_MuteMusicButton_pressed():
 	emit_signal("play_sound")
