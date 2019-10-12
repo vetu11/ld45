@@ -10,8 +10,6 @@ export(float) var ground_velocity = 300
 export(float) var ground_jump = 600
 export(float) var ground_gravity = 900
 export(float) var bendFallVelocity = 1000
-export(float) var airResistance = 0.55
-export(float) var linearMomentumConservation = 0.008
 export(PackedScene) var PauseMenu = preload("res://Menus/PauseMenu.tscn")
 
 var Vectors = [Vector2(0, -1), Vector2(0, 1), Vector2(-1, 0), Vector2(1, 0)]
@@ -49,18 +47,15 @@ func ground_controls(delta):
 	var new_velocity := Vector2()
 	new_velocity.y = last_velocity.y + ground_gravity * delta
 	
-	if !is_on_floor(): new_velocity.x = lerp(last_velocity.x, 0, linearMomentumConservation)
 	if Input.is_action_pressed("ground_right"):
 		new_velocity += Vectors[Directions.RIGHT] * ground_velocity
 		$Sprite.flip_h = false
 		if is_on_floor(): $Sprite/AnimationPlayer.current_animation = "walk"
-		else: new_velocity.x *= airResistance
 	elif Input.is_action_pressed("ground_left"):
 		new_velocity += Vectors[Directions.LEFT] * ground_velocity
 		$Sprite.flip_h = true
 		if is_on_floor(): $Sprite/AnimationPlayer.current_animation = "walk"
-		else: new_velocity.x *= airResistance
-	else:
+	elif is_on_floor():
 		$Sprite/AnimationPlayer.current_animation = "idle"
 	
 	if Input.is_action_just_pressed("ground_jump"):
@@ -73,17 +68,17 @@ func ground_controls(delta):
 			new_velocity.y = -ground_jump
 			validDoubleJump = false
 	
-	if Input.is_action_pressed("ground_bend"):
-		$Sprite/AnimationPlayer.current_animation = "bend"
-		$Stand.disabled = true
-		$Bend.disabled = false
-		if !is_on_floor(): new_velocity.x = 0
-		new_velocity.y = bendFallVelocity
+#	if Input.is_action_pressed("ground_bend"):
+#		$Sprite/AnimationPlayer.current_animation = "bend"
+#		$Stand.disabled = true
+#		$Bend.disabled = false
+#		if !is_on_floor(): new_velocity.x = 0
+#		new_velocity.y = bendFallVelocity
 	
-	if Input.is_action_just_released("ground_bend"):
-		$Sprite/AnimationPlayer.play_backwards("bend")
-		$Bend.disabled = true
-		$Stand.disabled = false
+#	if Input.is_action_just_released("ground_bend"):
+#		$Sprite/AnimationPlayer.play_backwards("bend")
+#		$Bend.disabled = true
+#		$Stand.disabled = false
 	
 	last_velocity = move_and_slide(new_velocity, Vectors[Directions.UP])
 
