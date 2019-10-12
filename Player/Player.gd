@@ -10,8 +10,6 @@ export(float) var ground_velocity = 300
 export(float) var ground_jump = 600
 export(float) var ground_gravity = 900
 export(float) var bendFallVelocity = 1000
-export(float) var airResistance = 0.55
-export(float) var linearMomentumConservation = 0.008
 export(PackedScene) var PauseMenu = preload("res://Menus/PauseMenu.tscn")
 
 var Vectors = [Vector2(0, -1), Vector2(0, 1), Vector2(-1, 0), Vector2(1, 0)]
@@ -49,17 +47,14 @@ func ground_controls(delta):
 	var new_velocity := Vector2()
 	new_velocity.y = last_velocity.y + ground_gravity * delta
 	
-	if !is_on_floor(): new_velocity.x = lerp(last_velocity.x, 0, linearMomentumConservation)
 	if Input.is_action_pressed("ground_right"):
 		new_velocity += Vectors[Directions.RIGHT] * ground_velocity
 		$Sprite.flip_h = false
 		if is_on_floor(): $Sprite/AnimationPlayer.current_animation = "walk"
-		else: new_velocity.x *= airResistance
 	elif Input.is_action_pressed("ground_left"):
 		new_velocity += Vectors[Directions.LEFT] * ground_velocity
 		$Sprite.flip_h = true
 		if is_on_floor(): $Sprite/AnimationPlayer.current_animation = "walk"
-		else: new_velocity.x *= airResistance
 	elif is_on_floor():
 		$Sprite/AnimationPlayer.current_animation = "idle"
 	
