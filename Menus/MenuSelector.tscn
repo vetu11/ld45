@@ -66,13 +66,13 @@ arget, vetu11"
 align = 2
 
 [node name="Music" type="Label" parent="MarginContainer/Container/Credits"]
-margin_left = 1081.0
+margin_left = 934.0
 margin_top = 266.0
 margin_right = 1276.0
 margin_bottom = 369.0
 size_flags_horizontal = 8
 text = "Music by:
-vetu11"
+vetu11, hotline.rs"
 align = 2
 
 [node name="Thanks" type="Label" parent="MarginContainer/Container/Credits"]
