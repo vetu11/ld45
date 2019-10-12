@@ -60,7 +60,7 @@ func ground_controls(delta):
 		$Sprite.flip_h = true
 		if is_on_floor(): $Sprite/AnimationPlayer.current_animation = "walk"
 		else: new_velocity.x *= airResistance
-	else:
+	elif is_on_floor():
 		$Sprite/AnimationPlayer.current_animation = "idle"
 	
 	if Input.is_action_just_pressed("ground_jump"):
